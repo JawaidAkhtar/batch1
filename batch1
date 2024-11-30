@@ -1,1 +1,51 @@
-starting a new batch of devops soon...
+docker ps
+    2  curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+    3  sudo install minikube-linux-amd64 /usr/local/bin/minikube && rm minikube-linux-amd64
+    4  curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl.sha256"
+    5  echo "$(cat kubectl.sha256)  kubectl" | sha256sum --check
+    6  sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+    7  kubectl --version
+    8  kubectl -version
+    9  kubectl -v
+   10  kubectl --help
+   11  clear
+   12  minikube start
+   13  kubectl get nodes
+   14  docker ps
+   15  clear
+   16  vi pod.yml
+   17  kubectl apply -f pod.yml
+   18  kubectl get pods
+   19  kubectl describe nginx
+   20  kubectl describe nginx -n default
+   21  clear
+   22  cat pod.yml
+   23  kubectl delete pod nginx
+   24  kubectl get pods
+   25  clear
+   26  git clone https://github.com/JawaidAkhtar/weather_app.git
+   27  ls
+   28  cd weather_app
+   29  ls
+   30  cat deployment.yml
+   31  vi deployment.yml
+   32  ls
+   33  cat namespace.yml
+   34  kubectl apply -f namespace.yml
+   35  kubectl apply -f deployment.yml
+   36  kubectl get deployment
+   37  kubectl get deployment -n weather-app
+   38  vi deployment.yml
+   39  kubectl apply -f deployment.yml
+   40  kubectl get deployment -n weather-app
+   41  kubectl get pods -n weather-app
+   42  kubectl delete pod weather-app-deployment-7477766764-4x2z8 -n weather-app
+   43  kubectl get pods -n weather-app
+   44  ls
+   45  cat service.yml
+   46  kubectl apply -f service.yml
+   47  kubectl get svc -n weather-app
+   48  kubectl port-forward svc/weather-app-service -n weather-app 80:81 --address 0.0.0.0 &
+   49  kubectl port-forward svc/weather-app-service -n weather-app 81:81 --address 0.0.0.0 &
+   50  kubectl port-forward svc/weather-app-service -n weather-app 8081:81 --address 0.0.0.0 &
+   51  history
